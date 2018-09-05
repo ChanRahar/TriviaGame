@@ -1,0 +1,47 @@
+body {
+    width:100%;
+    background-image: url(../images/background1.jpg);
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color:black;
+    font-size:20px;
+    text-shadow: 1px 1px red;
+}
+.navbar {
+    opacity: .75;
+}
+.navbar-brand {
+    width: 100%;
+    margin:auto;
+    font-size:50px;
+    text-align: center;
+}
+
+#start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeHold {
+    width: 100%;
+    text-align: center;
+}
+button {
+    display: block;
+    margin: 10px auto;
+    color: rgba(22, 16, 99, 0.986);
+    background-color:red;
+    border-radius: 4px;
+  }
+
+.question-Div {
+      background: rgba(255, 255, 255, 0.5);
+  }
+
+  h3{
+      text-align: center;
+  }
+  

@@ -46,13 +46,14 @@ $(document).ready(function () {
         var answerFind = questions[currentQuestion].answers[questions[currentQuestion].values.indexOf(true)];
 
         var questionDiv = $("<div>");
-        questionDiv.attr("id", "question-Div");
+        questionDiv.attr("class", "question-Div");
         var timer = $("<h2>");
+        timer.addClass("timeHold");
         var question = $("<h2>");
 
         $("#content").append(questionDiv);
-        $("#question-Div").append(timer);
-        $("#question-Div").append(question);
+        $(".question-Div").append(timer);
+        $(".question-Div").append(question);
 
         var time = 15;
         timer.text(time);
@@ -113,14 +114,17 @@ $(document).ready(function () {
     }
 
     function gameOver() {
+        var scorecard = $("<div>");
+        scorecard.attr("class", "question-Div");
         var totalCorrect = $("<h3>");
         var totalIncorrect = $("<h3>");
         var totalNone = $("<h3>");
-        totalCorrect.appendTo($("#content"));
+        scorecard.appendTo($("#content"));
+        totalCorrect.appendTo(scorecard);
         totalCorrect.html("Correct: " + correct);
-        totalIncorrect.appendTo("#content");
+        totalIncorrect.appendTo(scorecard);
         totalIncorrect.html("Wrong: " + wrong);
-        totalNone.appendTo("#content");
+        totalNone.appendTo(scorecard);
         totalNone.html("Missed: " + none);
 
 
@@ -129,9 +133,9 @@ $(document).ready(function () {
         restart.text("Restart?");
         $("#content").append(restart);
 
-      
 
-        var restartTime = setTimeout(again, 10* 1000);
+
+        var restartTime = setTimeout(again, 10 * 1000);
 
         $(".restart").click(function () {
             again();
